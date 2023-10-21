@@ -14,7 +14,7 @@ export class AppController {
   constructor(
     private readonly appService: AppService,
     private dbService: DbService,
-  ) { }
+  ) {}
 
   @Get()
   @ApiOkResponse({
