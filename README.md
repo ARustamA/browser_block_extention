@@ -1,6 +1,6 @@
 # browser_block_extention
 
-#### backend
+#backend
 Installation
 $ npm install
 
@@ -22,6 +22,6 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 
-#### frontend
+# frontend
 npm i
 npm run dev
