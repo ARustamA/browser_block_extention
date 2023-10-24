@@ -11,5 +11,20 @@ services:
       - '5434:5432'
     volumes:
       - db:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5434/postgres?schema=public
+    links:
+      - db
+
+
 volumes:
   db:

@@ -1,3 +1,5 @@
+
+import { useResetSession } from "@/entities/session";
 import { authControllerSignOut } from "@/shared/api/generated";
 import { ROUTES } from "@/shared/constants/routes";
 import { useMutation } from "@tanstack/react-query";
@@ -6,12 +8,14 @@ import { useState } from "react";
 
 export function useSignOut() {
   const router = useRouter();
+  const resetSession = useResetSession()
   const [errorMessage, setErrorMessage] = useState<string | undefined>()
   const signOutMutation =
     useMutation({
       mutationFn: authControllerSignOut,
-      onSuccess() {
+      async onSuccess() {
         router.push(ROUTES.HOME);
+        resetSession()
       },
       onError(error: any) {
         if (error.response && error.response.data && error.response.data.statusCode === 401) {
