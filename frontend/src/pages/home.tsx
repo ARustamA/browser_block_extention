@@ -1,27 +1,20 @@
-import Image from "next/image";
-;
-import { UiButton } from "@/shared/ui/ui-button";
+import { ToggleBlockingButton } from "@/features/toggle-blocking";
 import { UiHeader } from "@/shared/ui/ui_header";
-import { SignOutButton } from "@/features/auth";
-import { useSessionQuery } from "@/entities/session";
+
+
+import { Profile } from "@/widgets/profile";
 
 export function HomePage() {
-  const { data } = useSessionQuery();
-
   return (
-    <main className={`min-h-screen`}>
-      <UiHeader
-        right={
-          <div className="flex items-center gap-2">
-            {data?.email}
-            <SignOutButton />
-          </div>
-        }
-      />
+    <div className={`min-h-screen flex flex-col`}>
+      <UiHeader right={<Profile />} />
 
-      <UiButton disabled variant="primary">
-        Sign out
-      </UiButton>
-    </main>
+      <div className="grid grid-cols-[200px,1fr] ">
+        <aside className="px-5 pt-10">
+          <ToggleBlockingButton />
+        </aside>
+        <main>Block list</main>
+      </div>
+    </div>
   );
 }
