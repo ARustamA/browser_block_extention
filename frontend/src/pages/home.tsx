@@ -1,4 +1,4 @@
-import { useBlockListQuery } from "@/entities/block-list/queries";
+import { useBlockListQuery } from "@/entities/block-list/queries"; 
 import { AddBlockItemForm, BlockList } from "@/features/block-list";
 import { ToggleBlockingButton } from "@/features/toggle-blocking";
 import { UiHeader } from "@/shared/ui/ui_header";
