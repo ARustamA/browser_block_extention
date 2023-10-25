@@ -13,7 +13,7 @@ export function ToggleBlockingButton() {
       onClick={useToggleBlock}
       variant={isBlockingEnabled ? "primary" : "secondary"}
     >
-      {isBlockingEnabled ? "Block" : "Unblock"}
+      {!isBlockingEnabled ? "Block" : "Unblock"}
     </UiButton>
   );
 }
