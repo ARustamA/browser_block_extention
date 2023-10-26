@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "api:download": "curl -o ./src/shared/api/schema.yaml http://localhost:3000/api-yaml",
-    "api:generate": "orval  "
+    "api:generate": "orval"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.0.0",

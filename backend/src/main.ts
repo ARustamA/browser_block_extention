@@ -14,6 +14,13 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document); //хостинг свагера
 
   app.use(cookieParser());
+  app.enableCors({
+    origin: [
+      'http://localhost:3001',
+      'chrome-extension://lmfhdjobngjjocjeakbkoefedgmmmkpp',
+    ],
+    credentials: true,
+  });
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
 }
