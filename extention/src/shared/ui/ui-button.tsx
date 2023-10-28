@@ -11,7 +11,7 @@ export function UiButton({ className, variant, ...prop }: UiButtonProps) {
       {...prop}
       className={clsx(
         className,
-        "px-4 h-10 rounded cursor-pointer flex gap-2 items-center justify-center",
+        "px-6 h-12 rounded cursor-pointer flex gap-2 items-center justify-center",
         {
           primary:
             "text-white bg-teal-500 hover:bg-teal-600 disabled:opacity-50 shadow shadow-teal-500/30",
