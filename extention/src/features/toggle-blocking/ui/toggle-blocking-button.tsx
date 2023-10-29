@@ -1,5 +1,5 @@
 import { UiButton } from "@/shared/ui/ui-button";
-import { useToggleBlocking } from "../model/use-toogle-blocking";
+import { useToggleBlocking } from "../model/use-toggle-blocking";
 
 export function ToggleBlockingButton() {
   const { isBlockingEnabled, isLoading, useToggleBlock, isReady } =

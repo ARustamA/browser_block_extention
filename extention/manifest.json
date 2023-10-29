@@ -2,5 +2,11 @@
   "manifest_version": 3,
   "name": "Block list",
   "version": "1.0.0",
-  "action": { "default_popup": "index.html" }
+  "action": { "default_popup": "index.html" },
+  "host_permissions": ["<all_urls>"], 
+  "permissions": ["declarativeNetRequest", "alarms"],
+  "background": {
+    "service_worker": "src/app/background.ts",
+    "type": "module"
+  }
 }
